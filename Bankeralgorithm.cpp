@@ -41,9 +41,12 @@ int main(){
     }
 
     for(int i=0;i<m;i++){
-        available[i] = total[i] - allocation[0][i];
+        int sum = 0;
+        for(int j=0;j<n;j++){
+            sum += allocation[j][i];
+        }
+        available[i] += sum;
     }
-
     cout<<"Available Resources: "<<endl;
     for(int i=0;i<m;i++){
         cout<<available[i]<<" ";
